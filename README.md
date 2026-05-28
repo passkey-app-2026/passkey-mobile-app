@@ -8,7 +8,7 @@ This project demonstrates secure passwordless authentication using biometric log
 
 # 🚀 Features
 
-## Mobile App (Flutter)
+## Frontend (Flutter)
 
 * User Registration
 * Passkey Authentication
@@ -22,7 +22,7 @@ This project demonstrates secure passwordless authentication using biometric log
 
 ---
 
-## Backend API (Node.js)
+## Backend (Node.js)
 
 * REST API Architecture
 * Passkey Registration Verification
