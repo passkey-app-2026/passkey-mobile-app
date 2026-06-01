@@ -1,8 +1,3 @@
-// src/controllers/userController.js
-/**
- * Controller for protected user routes.
- * The JWT middleware adds `req.user` (id, email).
- */
 import User from '../models/User.js';
 
 export const getProfile = async (req, res, next) => {
