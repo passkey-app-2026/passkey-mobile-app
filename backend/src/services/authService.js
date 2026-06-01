@@ -1,9 +1,3 @@
-// src/services/authService.js
-/**
- * Service layer that wraps @simplewebauthn/server and DB operations.
- * All functions return plain JS objects – the controller decides HTTP status / messages.
- */
-
 import {
   generateRegistrationOptions,
   verifyRegistrationResponse,
@@ -15,9 +9,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-/* ------------------------------------------------------------------ *
- * 1️⃣  Registration (Passkey creation)
- * ------------------------------------------------------------------ */
+// Registration (Passkey creation)
+
 
 /**
  * Build WebAuthn registration options for a given email.
@@ -82,9 +75,7 @@ export const verifyRegistration = async (email, registrationResponse) => {
   return { userId: user._id };
 };
 
-/* ------------------------------------------------------------------ *
- * 2️⃣  Authentication (Passkey login)
- * ------------------------------------------------------------------ */
+// Authentication (Passkey login) 
 
 /**
  * Generate authentication (login) options (challenge) for the email.
@@ -139,7 +130,7 @@ export const verifyLogin = async (email, authenticationResponse) => {
   user.currentChallenge = undefined;
   await user.save();
 
-  // ---------- JWT ---------------------------------------------------
+  // JWT 
   const jwt = require('jsonwebtoken');
   const payload = { sub: user._id.toString(), email: user.email };
   const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '2h' });
