@@ -1,9 +1,3 @@
-// src/controllers/authController.js
-/**
- * Controller layer – thin wrappers around the service functions.
- * Each function receives the Express req/res objects, calls the service,
- * and returns JSON. Errors are passed to the global error handler via next().
- */
 import {
   getRegistrationOptions,
   verifyRegistration,
@@ -11,7 +5,7 @@ import {
   verifyLogin,
 } from '../services/authService.js';
 
-// 1️⃣ POST /auth/register-options
+// POST /auth/register-options
 export const registerOptions = async (req, res, next) => {
   try {
     const { email } = req.body;
@@ -23,7 +17,7 @@ export const registerOptions = async (req, res, next) => {
   }
 };
 
-// 2️⃣ POST /auth/register-verify
+// POST /auth/register-verify
 export const registerVerify = async (req, res, next) => {
   try {
     const { email } = req.body;
@@ -34,7 +28,7 @@ export const registerVerify = async (req, res, next) => {
   }
 };
 
-// 3️⃣ POST /auth/login-options
+// POST /auth/login-options
 export const loginOptions = async (req, res, next) => {
   try {
     const { email } = req.body;
@@ -46,7 +40,7 @@ export const loginOptions = async (req, res, next) => {
   }
 };
 
-// 4️⃣ POST /auth/login-verify (returns JWT)
+// POST /auth/login-verify (returns JWT)
 export const loginVerify = async (req, res, next) => {
   try {
     const { email } = req.body;
