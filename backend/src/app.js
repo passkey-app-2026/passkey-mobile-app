@@ -1,4 +1,3 @@
-// src/app.js
 // Main Express application setup
 
 import express from 'express';
