@@ -1,6 +1,3 @@
-// src/config/db.js
-// MongoDB connection using Mongoose
-
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
