@@ -1,6 +1,3 @@
-// src/server.js
-// Entry point to start the Express server
-
 import app from './app.js';
 import dotenv from 'dotenv';
 
